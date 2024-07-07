@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styleIndex.css">
+    <title>Minecraft Server Easy Initialisation</title>
+</head>
+
+<body>
+    <div class="MainWrap">
+        <h1>Minecraft Server Init</h1>
+        <form id="folderForm" onsubmit="return false;">
+            <div class="divVersion">
+                <h3>Choose Server Version</h3>
+                <select id="versionSelector"></select>
+            </div>
+            <div class="divFolder">
+                <h3>Enter Folder Name</h3>
+                <input type="text" id="folderNameInput" placeholder="Enter folder name">
+                <div id="folderNameError" class="error-message">Please enter a folder name.</div>
+            </div>
+
+            <div class="divRam">
+                <h3>Max Ram Allocated</h3>
+                <input type="range" id="ramRange" min="1024" max="36864" value="1024" step="1024">
+                <div id="ramValue">1024 MB</div>
+            </div>
+
+            <div class="divButton">
+                <button id="generateBtn" type="submit">Generate Server</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    const versions = {
+        "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar",
+        "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
+        "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar",
+        "1.20.4 ": "	https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar",
+        "1.20.3 ": "https://piston-data.mojang.com/v1/objects/4fb536bfd4a83d61cdbaf684b8d311e66e7d4c49/server.jar",
+        "1.20.2 ": "	https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar",
+        "1.19.4 ": "https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar",
+        "1.19.3": "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar",
+        "1.19.2": "https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar",
+        "1.19.1 ": "https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar",
+        "1.18.2": "https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar",
+        "1.18.1": "https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar",
+        "1.17.1": "https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar"
+    };
+
+
+    const form = document.getElementById('folderForm');
+    const folderNameInput = document.getElementById('folderNameInput');
+    const versionSelector = document.getElementById('versionSelector');
+
+
+
+
+
+    for (const [version, url] of Object.entries(versions)) {
+        const option = document.createElement('option');
+        option.value = version;
+        option.textContent = version;
+        versionSelector.appendChild(option);
+    }
+
+    const selectedVersion = versionSelector.value;
+    const downloadUrl = versions[selectedVersion];
+
+
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const folderName = folderNameInput.value.trim();
+        if (!folderName) {
+            folderNameError.style.display = 'block'; // Affiche le message d'erreur
+            return;
+        }
+
+        folderNameError.style.display = 'none'
+        selectedRam = ramRange.value;
+        window.api.createFolder(folderName, selectedVersion, downloadUrl, selectedRam);
+        generateBtn.disabled = true;
+
+    });
+
+    folderNameInput.addEventListener('input', (event) => {
+        const value = event.target.value;
+        event.target.value = value.replace(/[^A-Za-z0-9]/g, '');
+    });
+
+    ramRange.addEventListener('input', (event) => {
+        const value = event.target.value;
+        ramValue.textContent = `${value} MB`;
+    });
+
+</script>
+
+</html>

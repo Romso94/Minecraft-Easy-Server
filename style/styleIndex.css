@@ -1,0 +1,84 @@
+:root{
+    --bg-color: #2E3440;
+    --input-color : #434C5E;
+    --text-color: #D8DEE9;
+    --bg-client-color: #3b4252;
+    --select-color: #5e81ac;
+}
+
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('../font/Minecraftia-Regular.ttf') format('truetype');
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    font-family: 'Minecraftia';
+    align-items:center ;
+    margin-top:30px ;
+}
+
+.error-message {
+    color: red; /* Couleur du texte du message d'erreur */
+    font-size: 0.8em; /* Taille de la police du message d'erreur */
+    margin-top: 0.5em; /* Marge en haut pour séparer le message d'erreur */
+    display: none; /* Caché par défaut */
+}
+
+input, select,button{
+    background-color: var(--input-color);
+    color: var(--text-color);
+    border: none;
+    font-family: 'Minecraftia';
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px ;
+}
+
+select {
+    background-color: var(--select-color);
+    font-size: 16px;
+    padding: 10px;
+    height: 45px; 
+    line-height: 30px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    font-weight: normal;
+    appearance: none;
+}
+
+input{
+    padding: 7px;
+}
+
+button{
+    padding: 10px;
+}
+
+button:hover{
+    background-color: var(--bg-color);
+}
+
+.divButton{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
+.MainWrap{
+    background-color: var(--bg-client-color);
+    width: 60%;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+}
