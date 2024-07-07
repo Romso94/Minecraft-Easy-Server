@@ -27,7 +27,7 @@ This tool allows you to generate a Minecraft server on your local machine. You c
 
 <h1 align="center" id="title">Minecraft Easy Server</h1>
 
-<p align="center"><img src="https://github.com/0adri3n/PocketYoutube/blob/main/assets/pocket.png" alt="project-image" width="200"></p>
+<p align="center"><img src="https://github.com/Romso94/Minecraft-Easy-Server/blob/main/assets/logo.ico" alt="project-image" width="200"></p>
 
 <p id="description">A minimalist YouTube Navigator</p>
 
