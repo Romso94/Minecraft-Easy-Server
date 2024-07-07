@@ -14,7 +14,7 @@ function createWindow() {
             nodeIntegration: false,
             contextIsolation: true
         },
-        icon: path.join(__dirname, "logo.ico"),
+        icon: path.join(__dirname, "assets/logo.ico"),
         autoHideMenuBar: true,
     });
 
