@@ -44,6 +44,11 @@ Technologies used in the project:
 * Node.js
 * Electron
 
+<h2>Future : </h3>
+
+* I will release a tutorial to explain how to open your server to play with your friends without PORT FORWARDING. 
+* For now you can learn here how to do it : <b>https://www.youtube.com/watch?v=NK5lsDXIFnM</b>
+
 <h2>🛡️ License:</h2>
 
 This project is licensed under the MIT License.
