@@ -17,9 +17,9 @@ Creating a Minecraft server isn't quite easy. It can also be boring because you 
 <h2>How does it work? 👓</h2>
 <p>1. Choose your server version from 1.17.1 to 1.21, your folder name, and the amount of RAM you want to allocate.</p>
 <p>2. Click on the button.</p>
-<p>3. Your server will be generated in a folder on your desktop.</p>
+<p>3. Your server will be generated in a folder on your desktop and start.</p>
 
-<p>Note that to restart your server go to the folder created and run the file "run.bat"</p>
+<p>Note that to restart or launch your server go to the folder created and run the file "run.bat"</p>
 
 <h2>🛠️ Installation Steps:</h2>
 
