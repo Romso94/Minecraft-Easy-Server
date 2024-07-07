@@ -19,6 +19,8 @@ Creating a Minecraft server isn't quite easy. It can also be boring because you 
 <p>2. Click on the button.</p>
 <p>3. Your server will be generated in a folder on your desktop.</p>
 
+<p>Note that to restart your server go to the folder created and run the file "run.bat"</p>
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>First, you need JAVA.</p>
